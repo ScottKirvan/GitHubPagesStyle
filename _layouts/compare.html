@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/github-pages-style.css">
+    <style>
+        /* Comparison page specific styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            max-width: 100%;
+        }
+
+        .comparison-header {
+            background-color: var(--bgColor-default, #010409);
+            border-bottom: 1px solid var(--borderColor-default, #b7bdc8);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .comparison-header h1 {
+            margin: 0;
+            border: none;
+            padding: 0;
+            font-size: 1.25em;
+            color: var(--fgColor-default, #ffffff);
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .controls label {
+            color: var(--fgColor-muted, #b7bdc8);
+            font-size: 14px;
+        }
+
+        .controls input[type="text"] {
+            background-color: var(--control-bgColor-rest, #262c36);
+            color: var(--fgColor-default, #ffffff);
+            border: 1px solid var(--borderColor-default, #b7bdc8);
+            padding: 6px 12px;
+            border-radius: 6px;
+            min-width: 300px;
+            font-size: 14px;
+        }
+
+        .controls input[type="text"]:focus {
+            outline: none;
+            border-color: var(--borderColor-accent-emphasis, #409eff);
+        }
+
+        .controls button {
+            background-color: var(--button-default-bgColor-rest, #262c36);
+            color: var(--fgColor-default, #ffffff);
+            border: 1px solid var(--borderColor-default, #b7bdc8);
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .controls button:hover {
+            background-color: var(--button-default-bgColor-hover, #2a313c);
+        }
+
+        .controls button.primary {
+            background-color: var(--button-primary-bgColor-rest, #006222);
+            border-color: var(--borderColor-success-emphasis, #09b43a);
+        }
+
+        .controls button.primary:hover {
+            background-color: var(--button-primary-bgColor-hover, #08792b);
+        }
+
+        .controls select {
+            background-color: var(--control-bgColor-rest, #262c36);
+            color: var(--fgColor-default, #ffffff);
+            border: 1px solid var(--borderColor-default, #b7bdc8);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            height: calc(100vh - 80px);
+        }
+
+        .comparison-container.three-column {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .preview-pane {
+            border-right: 2px solid var(--borderColor-default, #b7bdc8);
+            overflow: auto;
+            position: relative;
+        }
+
+        .preview-pane:last-child {
+            border-right: none;
+        }
+
+        .preview-header {
+            background-color: var(--bgColor-muted, #151b23);
+            border-bottom: 1px solid var(--borderColor-default, #b7bdc8);
+            padding: 8px 16px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--fgColor-muted, #b7bdc8);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .preview-content {
+            padding: 24px;
+        }
+
+        .preview-content iframe {
+            width: 100%;
+            border: none;
+            min-height: calc(100vh - 160px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .comparison-container {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-container.three-column {
+                grid-template-columns: 1fr;
+            }
+
+            .preview-pane {
+                border-right: none;
+                border-bottom: 2px solid var(--borderColor-default, #b7bdc8);
+                min-height: 50vh;
+            }
+
+            .preview-pane:last-child {
+                border-bottom: none;
+            }
+
+            .controls input[type="text"] {
+                min-width: 200px;
+            }
+        }
+
+        .theme-indicator {
+            background-color: var(--bgColor-neutral-muted, #212830);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--fgColor-muted, #b7bdc8);
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body data-theme="dark-high-contrast">
+    <div class="comparison-header">
+        <h1>{{ page.title }}</h1>
+
+        <div class="controls">
+            <label for="theme-select">Theme:</label>
+            <select id="theme-select">
+                <option value="dark-high-contrast">Dark High Contrast</option>
+                <option value="light">Light (Coming Soon)</option>
+            </select>
+
+            <label for="test-page-select">Test Page:</label>
+            <select id="test-page-select">
+                <option value="sample">Sample Content</option>
+                <option value="readme">README</option>
+            </select>
+
+            <button id="toggle-custom" class="primary">+ Custom URL</button>
+
+            <span class="theme-indicator" id="theme-indicator">dark-high-contrast</span>
+        </div>
+    </div>
+
+    <div id="custom-url-panel" style="display: none; background-color: var(--bgColor-muted, #151b23); padding: 16px 24px; border-bottom: 1px solid var(--borderColor-default, #b7bdc8);">
+        <div style="display: flex; gap: 12px; align-items: center;">
+            <label for="custom-url" style="color: var(--fgColor-muted, #b7bdc8);">Custom URL:</label>
+            <input type="text" id="custom-url" placeholder="https://example.com/page.html" style="flex: 1;">
+            <button id="load-custom" class="primary">Load</button>
+            <button id="close-custom">Close</button>
+        </div>
+    </div>
+
+    <div class="comparison-container" id="comparison-container">
+        <!-- Local Preview -->
+        <div class="preview-pane">
+            <div class="preview-header">Local Preview (Current Stylesheet)</div>
+            <div class="preview-content" id="local-preview">
+                {{ content }}
+            </div>
+        </div>
+
+        <!-- GitHub Preview -->
+        <div class="preview-pane">
+            <div class="preview-header">GitHub Rendered</div>
+            <div class="preview-content">
+                <iframe id="github-iframe" sandbox="allow-same-origin allow-scripts"></iframe>
+            </div>
+        </div>
+
+        <!-- Custom URL Preview (hidden by default) -->
+        <div class="preview-pane" id="custom-pane" style="display: none;">
+            <div class="preview-header">Custom URL</div>
+            <div class="preview-content">
+                <iframe id="custom-iframe" sandbox="allow-same-origin allow-scripts"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme switcher
+        const themeSelect = document.getElementById('theme-select');
+        const themeIndicator = document.getElementById('theme-indicator');
+
+        themeSelect.addEventListener('change', (e) => {
+            const theme = e.target.value;
+            document.body.setAttribute('data-theme', theme);
+            themeIndicator.textContent = theme;
+
+            // TODO: Actually switch stylesheets when light theme is implemented
+            if (theme === 'light') {
+                alert('Light theme coming soon!');
+                themeSelect.value = 'dark-high-contrast';
+            }
+        });
+
+        // Test page switcher
+        const testPageSelect = document.getElementById('test-page-select');
+        const githubIframe = document.getElementById('github-iframe');
+
+        const testPages = {
+            'sample': {
+                local: '{{ site.baseurl }}/sample',
+                github: 'https://github.com/{{ site.github.owner_name }}/{{ site.github.repository_name }}/blob/main/sample.md'
+            },
+            'readme': {
+                local: '{{ site.baseurl }}/',
+                github: 'https://github.com/{{ site.github.owner_name }}/{{ site.github.repository_name }}/blob/main/README.md'
+            }
+        };
+
+        testPageSelect.addEventListener('change', (e) => {
+            const page = e.target.value;
+            if (testPages[page]) {
+                // Update GitHub iframe
+                githubIframe.src = testPages[page].github;
+
+                // Update local preview (would need AJAX for dynamic loading)
+                // For now, just update the iframe src
+                // TODO: Implement dynamic content loading
+            }
+        });
+
+        // Custom URL panel
+        const toggleCustomBtn = document.getElementById('toggle-custom');
+        const customPanel = document.getElementById('custom-url-panel');
+        const customPane = document.getElementById('custom-pane');
+        const container = document.getElementById('comparison-container');
+        const loadCustomBtn = document.getElementById('load-custom');
+        const closeCustomBtn = document.getElementById('close-custom');
+        const customUrlInput = document.getElementById('custom-url');
+        const customIframe = document.getElementById('custom-iframe');
+
+        toggleCustomBtn.addEventListener('click', () => {
+            customPanel.style.display = 'block';
+            customPane.style.display = 'block';
+            container.classList.add('three-column');
+            toggleCustomBtn.style.display = 'none';
+        });
+
+        closeCustomBtn.addEventListener('click', () => {
+            customPanel.style.display = 'none';
+            customPane.style.display = 'none';
+            container.classList.remove('three-column');
+            toggleCustomBtn.style.display = 'inline-block';
+            customIframe.src = '';
+        });
+
+        loadCustomBtn.addEventListener('click', () => {
+            const url = customUrlInput.value.trim();
+            if (url) {
+                customIframe.src = url;
+            } else {
+                alert('Please enter a valid URL');
+            }
+        });
+
+        // Initialize with default GitHub page
+        githubIframe.src = testPages['sample'].github;
+    </script>
+</body>
+</html>

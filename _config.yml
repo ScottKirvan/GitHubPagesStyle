@@ -1,0 +1,55 @@
+# Site settings
+title: GitHubPagesStyle
+description: GitHub Primer Design System stylesheets for GitHub Pages
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# GitHub metadata
+github:
+  owner_name: ScottKirvan
+  repository_name: GitHubPagesStyle
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - .obsidian/
+  - notes/
+  - scripts/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .gitignore
+  - intent.md
+  - README.md
+  - LICENSE.md
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+
+# Include files
+include:
+  - _layouts/
+  - assets/
+
+# Collections
+collections: {}
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
