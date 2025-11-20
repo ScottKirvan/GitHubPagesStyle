@@ -1,3 +1,8 @@
+---
+layout: default
+title: GitHubPagesStyle
+---
+
 # GitHubPagesStyle [![starline](https://starlines.qoo.monster/assets/ScottKirvan/GitHubPagesStyle)](https://github.com/qoomon/starline)
 <div align="center">
 
@@ -103,7 +108,7 @@ GitHubPagesStyle
 >[!NOTE]
 > When using this template project, do not clone the tags or branches. Stick with `main` as the name of your main release branch. Change the version number in the `.release-please-manifest.json` file to the version you want to start with.
 >
-> Release-Please uses [Semantic Versioning](https://semver.org/) (version: MAJOR.MINOR.PATCH). Changes to version numbers are triggered by specific keywords in your commit messages:
+> Release-Please uses [Semantic Versioning](https://semver.org/) (version: MAJOR.MINOR.PATCH) and [Conventional Commits](https://www.conventionalcommits.org/). Changes to version numbers are triggered by specific keywords in your commit messages:
 > - `feat:` (new feature) will bump the MINOR version number.
 > - `fix:` (bug fixes) will bump the PATCH number.
 > - `feat!:` `fix!:` or any `xxx!:` (major and breaking changes) will bump the MAJOR version number.

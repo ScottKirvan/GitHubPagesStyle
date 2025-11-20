@@ -1,8 +1,8 @@
 # Site settings
 title: GitHubPagesStyle
 description: GitHub Primer Design System stylesheets for GitHub Pages
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+baseurl: "/GitHubPagesStyle" # the subpath of your site, e.g. /blog
+url: "https://www.scottkirvan.com" # the base hostname & protocol for your site
 
 # GitHub metadata
 github:
@@ -34,7 +34,6 @@ exclude:
   - vendor/
   - .gitignore
   - intent.md
-  - README.md
   - LICENSE.md
   - CODE_OF_CONDUCT.md
   - CONTRIBUTING.md
