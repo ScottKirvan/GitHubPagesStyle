@@ -1,0 +1,396 @@
+/*
+================================================================================
+  GitHubDHC for GitHub Pages
+
+  A standalone CSS stylesheet extracted from the GitHubDHC Obsidian theme
+  for use with GitHub Pages (Jekyll) or any static HTML site.
+
+  Author: Scott Kirvan
+  Based on: GitHub's Primer Design System - Dark High Contrast theme
+  Version: 2.0.2
+
+  Usage:
+  Add to your GitHub Pages _config.yml or HTML <head>:
+  <link rel="stylesheet" href="github-pages-style.css">
+================================================================================
+*/
+
+/* ─────────────────────────────────────────────────────────────────────────
+   COLOR SYSTEM - GitHub Dark High Contrast
+   ───────────────────────────────────────────────────────────────────────── */
+
+:root {
+    /* Background colors */
+    --color-bg-default: #0d1117;
+    --color-bg-muted: #010409;
+    --color-bg-emphasis: #7a828e;
+
+    /* Text colors */
+    --color-text-primary: #f0f3f6;
+    --color-text-secondary: #9ea7b3;
+    --color-text-link: #71b7ff;
+    --color-text-link-hover: #409eff;
+
+    /* Border colors */
+    --color-border-default: #3d444d;
+    --color-border-emphasis: #7a828e;
+
+    /* Code colors */
+    --color-code-bg: #161b22;
+    --color-inline-code-bg: rgba(110, 118, 129, 0.4);
+
+    /* Table colors */
+    --color-table-row-alt: #151b23;
+
+    /* Callout/Alert colors */
+    --color-note: #71b7ff;
+    --color-tip: #26a148;
+    --color-important: #b87fff;
+    --color-warning: #e09b13;
+    --color-caution: #e5534b;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BASE STYLES
+   ───────────────────────────────────────────────────────────────────────── */
+
+body {
+    background-color: var(--color-bg-default);
+    color: var(--color-text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 54pt; /* 3/4 inch margins */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TYPOGRAPHY
+   ───────────────────────────────────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text-primary);
+    font-weight: 600;
+    line-height: 1.25;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+h1 {
+    font-size: 2em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--color-border-emphasis);
+}
+
+h2 {
+    font-size: 1.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--color-border-emphasis);
+}
+
+h3 {
+    font-size: 1.25em;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+h5 {
+    font-size: 0.875em;
+}
+
+h6 {
+    font-size: 0.85em;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LINKS
+   ───────────────────────────────────────────────────────────────────────── */
+
+a {
+    color: var(--color-text-link);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--color-text-link-hover);
+}
+
+/* Links in headers - no underline */
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    text-decoration: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CODE BLOCKS
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Inline code */
+code {
+    background-color: var(--color-inline-code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    font-family: "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
+    font-size: 85%;
+}
+
+/* Code blocks */
+pre {
+    background-color: var(--color-code-bg);
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 16px 0;
+    overflow-x: auto;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LISTS
+   ───────────────────────────────────────────────────────────────────────── */
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-left: 2em;
+}
+
+li {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TABLES
+   ───────────────────────────────────────────────────────────────────────── */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 16px 0;
+    border-spacing: 0;
+}
+
+table thead tr {
+    background-color: var(--color-bg-default);
+}
+
+table tbody tr {
+    background-color: var(--color-bg-default);
+    border-top: 1px solid var(--color-border-default);
+}
+
+table tbody tr:nth-child(2n) {
+    background-color: var(--color-table-row-alt);
+}
+
+table th,
+table td {
+    padding: 6px 13px;
+    border: 1px solid var(--color-border-default);
+}
+
+table th {
+    font-weight: 600;
+    text-align: left;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BLOCKQUOTES
+   ───────────────────────────────────────────────────────────────────────── */
+
+blockquote {
+    margin: 0 0 16px 0;
+    padding: 0 1em;
+    color: var(--color-text-secondary);
+    border-left: 0.25em solid var(--color-border-default);
+}
+
+blockquote > :first-child {
+    margin-top: 0;
+}
+
+blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   GITHUB ALERTS (Callouts)
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Note: GitHub Pages may render alerts differently depending on your setup.
+   These styles assume you're using a blockquote with a special marker like:
+   > [!NOTE]
+   > Your content here
+*/
+
+blockquote[data-callout],
+blockquote.alert {
+    border: none;
+    border-left: 4px solid var(--color-note);
+    background-color: var(--color-bg-default);
+    padding: 11px 16px;
+    margin: 11px 0;
+    border-radius: 0;
+}
+
+/* Alert type colors */
+blockquote[data-callout="note"],
+blockquote.alert-note {
+    border-left-color: var(--color-note);
+}
+
+blockquote[data-callout="tip"],
+blockquote.alert-tip {
+    border-left-color: var(--color-tip);
+}
+
+blockquote[data-callout="important"],
+blockquote.alert-important {
+    border-left-color: var(--color-important);
+}
+
+blockquote[data-callout="warning"],
+blockquote.alert-warning {
+    border-left-color: var(--color-warning);
+}
+
+blockquote[data-callout="caution"],
+blockquote.alert-caution {
+    border-left-color: var(--color-caution);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   IMAGES
+   ───────────────────────────────────────────────────────────────────────── */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 8px 0;
+}
+
+/* Inline images (like badges) */
+p img,
+a img {
+    display: inline-block;
+    margin: 0 2px;
+    vertical-align: middle;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HORIZONTAL RULES
+   ───────────────────────────────────────────────────────────────────────── */
+
+hr {
+    height: 0.25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: var(--color-border-default);
+    border: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   DETAILS/SUMMARY
+   ───────────────────────────────────────────────────────────────────────── */
+
+details {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+summary {
+    cursor: pointer;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   SYNTAX HIGHLIGHTING (Optional)
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* If using syntax highlighting, add these classes.
+   Adjust colors as needed for your syntax highlighter. */
+
+.highlight .c { color: #7a828e; } /* Comment */
+.highlight .k { color: #ff7b72; } /* Keyword */
+.highlight .s { color: #a5d6ff; } /* String */
+.highlight .n { color: #f0f3f6; } /* Name */
+.highlight .o { color: #ff7b72; } /* Operator */
+.highlight .p { color: #f0f3f6; } /* Punctuation */
+.highlight .m { color: #79c0ff; } /* Number */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   RESPONSIVE DESIGN
+   ───────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.75em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    pre {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PRINT STYLES
+   ───────────────────────────────────────────────────────────────────────── */
+
+@media print {
+    body {
+        background-color: white;
+        color: black;
+        max-width: 100%;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    pre, code {
+        background-color: #f6f8fa;
+        color: black;
+    }
+}
