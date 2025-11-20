@@ -1,53 +1,100 @@
 /*
 ================================================================================
-  GitHubDHC for GitHub Pages
+  GitHub Primer Dark High Contrast for GitHub Pages
 
-  A standalone CSS stylesheet extracted from the GitHubDHC Obsidian theme
-  for use with GitHub Pages (Jekyll) or any static HTML site.
+  Official GitHub Primer Design System color tokens for Dark High Contrast theme
+  Provides 7:1 minimum contrast ratio for enhanced accessibility (WCAG AAA)
 
   Author: Scott Kirvan
-  Based on: GitHub's Primer Design System - Dark High Contrast theme
-  Version: 2.0.2
+  Based on: GitHub Primer Design System (@primer/primitives)
+  Version: 3.0.0
+  Updated: 2025-11-20
 
   Usage:
   Add to your GitHub Pages _config.yml or HTML <head>:
   <link rel="stylesheet" href="github-pages-style.css">
+
+  Reference:
+  https://primer.style/foundations/primitives/
+  https://unpkg.com/@primer/primitives/dist/css/functional/themes/dark-high-contrast.css
 ================================================================================
 */
 
 /* ─────────────────────────────────────────────────────────────────────────
-   COLOR SYSTEM - GitHub Dark High Contrast
+   COLOR SYSTEM - GitHub Primer Dark High Contrast
+   Official tokens from @primer/primitives
    ───────────────────────────────────────────────────────────────────────── */
 
 :root {
-    /* Background colors */
-    --color-bg-default: #0d1117;
-    --color-bg-muted: #010409;
-    --color-bg-emphasis: #7a828e;
+    /* ─── Background Colors ─── */
+    --bgColor-default: #010409;
+    --bgColor-muted: #151b23;
+    --bgColor-inset: #010409;
+    --bgColor-emphasis: #7a828e;
 
-    /* Text colors */
-    --color-text-primary: #f0f3f6;
-    --color-text-secondary: #9ea7b3;
-    --color-text-link: #71b7ff;
-    --color-text-link-hover: #409eff;
+    /* Semantic backgrounds */
+    --bgColor-accent-emphasis: #194fb1;
+    --bgColor-accent-muted: #5cacff1a;
+    --bgColor-success-emphasis: #006222;
+    --bgColor-success-muted: #0ac74026;
+    --bgColor-attention-emphasis: #7b4900;
+    --bgColor-danger-emphasis: #ad0116;
+    --bgColor-danger-muted: #ff80801a;
+    --bgColor-severe-emphasis: #8f3c00;
+    --bgColor-done-emphasis: #6921d7;
+    --bgColor-done-muted: #bf8fff26;
+    --bgColor-neutral-emphasis: #3d444d;
+    --bgColor-neutral-muted: #212830;
 
-    /* Border colors */
-    --color-border-default: #3d444d;
-    --color-border-emphasis: #7a828e;
+    /* ─── Foreground/Text Colors ─── */
+    --fgColor-default: #ffffff;
+    --fgColor-muted: #b7bdc8;
+    --fgColor-onEmphasis: #ffffff;
+    --fgColor-disabled: #656c76;
 
-    /* Code colors */
-    --color-code-bg: #161b22;
-    --color-inline-code-bg: rgba(110, 118, 129, 0.4);
+    /* Semantic text colors */
+    --fgColor-accent: #74b9ff;
+    --fgColor-success: #2bd853;
+    --fgColor-attention: #f0b72f;
+    --fgColor-severe: #fe9a2d;
+    --fgColor-danger: #ff9492;
+    --fgColor-done: #d3abff;
 
-    /* Table colors */
-    --color-table-row-alt: #151b23;
+    /* ─── Border Colors ─── */
+    --borderColor-default: #b7bdc8;
+    --borderColor-muted: #656c76;
+    --borderColor-emphasis: #b7bdc8;
 
-    /* Callout/Alert colors */
-    --color-note: #71b7ff;
-    --color-tip: #26a148;
-    --color-important: #b87fff;
-    --color-warning: #e09b13;
-    --color-caution: #e5534b;
+    /* Semantic borders */
+    --borderColor-accent-emphasis: #409eff;
+    --borderColor-accent-muted: #5cacff;
+    --borderColor-success-emphasis: #09b43a;
+    --borderColor-success-muted: #0ac740;
+    --borderColor-attention-emphasis: #e09b13;
+    --borderColor-danger-emphasis: #ff6a69;
+    --borderColor-danger-muted: #ff8080;
+    --borderColor-severe-emphasis: #e7811d;
+    --borderColor-done-emphasis: #b87fff;
+    --borderColor-done-muted: #bf8fff;
+
+    /* ─── Syntax Highlighting ─── */
+    --syntax-fgColor-comment: #656c76;
+    --syntax-fgColor-constant: #91cbff;
+    --syntax-fgColor-entity: #dbb7ff;
+    --syntax-fgColor-keyword: #ff9492;
+    --syntax-fgColor-storage: #ff9492;
+    --syntax-fgColor-string: #addcff;
+    --syntax-fgColor-variable: #ffb757;
+
+    /* ─── Legacy Compatibility (mapped to Primer tokens) ─── */
+    /* These provide backwards compatibility with existing selectors */
+    --color-bg-default: var(--bgColor-default);
+    --color-bg-muted: var(--bgColor-muted);
+    --color-text-primary: var(--fgColor-default);
+    --color-text-secondary: var(--fgColor-muted);
+    --color-text-link: var(--fgColor-accent);
+    --color-border-default: var(--borderColor-default);
+    --color-border-emphasis: var(--borderColor-emphasis);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -139,7 +186,8 @@ h6 a {
 
 /* Inline code */
 code {
-    background-color: var(--color-inline-code-bg);
+    background-color: var(--bgColor-neutral-muted);
+    color: var(--fgColor-default);
     padding: 0.2em 0.4em;
     border-radius: 6px;
     font-family: "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
@@ -148,7 +196,8 @@ code {
 
 /* Code blocks */
 pre {
-    background-color: var(--color-code-bg);
+    background-color: var(--bgColor-inset);
+    border: 1px solid var(--borderColor-default);
     border-radius: 6px;
     padding: 1rem;
     margin: 16px 0;
@@ -160,6 +209,7 @@ pre code {
     padding: 0;
     border-radius: 0;
     font-size: 100%;
+    color: var(--fgColor-default);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -189,27 +239,28 @@ table {
 }
 
 table thead tr {
-    background-color: var(--color-bg-default);
+    background-color: var(--bgColor-default);
 }
 
 table tbody tr {
-    background-color: var(--color-bg-default);
-    border-top: 1px solid var(--color-border-default);
+    background-color: var(--bgColor-default);
+    border-top: 1px solid var(--borderColor-default);
 }
 
 table tbody tr:nth-child(2n) {
-    background-color: var(--color-table-row-alt);
+    background-color: var(--bgColor-muted);
 }
 
 table th,
 table td {
     padding: 6px 13px;
-    border: 1px solid var(--color-border-default);
+    border: 1px solid var(--borderColor-default);
 }
 
 table th {
     font-weight: 600;
     text-align: left;
+    color: var(--fgColor-default);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -233,48 +284,65 @@ blockquote > :last-child {
 
 /* ─────────────────────────────────────────────────────────────────────────
    GITHUB ALERTS (Callouts)
+   Using GitHub Primer semantic color tokens
    ───────────────────────────────────────────────────────────────────────── */
 
-/* Note: GitHub Pages may render alerts differently depending on your setup.
-   These styles assume you're using a blockquote with a special marker like:
+/* GitHub alerts syntax:
    > [!NOTE]
-   > Your content here
+   > Useful information
+
+   > [!TIP]
+   > Helpful advice
+
+   > [!IMPORTANT]
+   > Key information
+
+   > [!WARNING]
+   > Urgent attention needed
+
+   > [!CAUTION]
+   > Advises about risks
 */
 
 blockquote[data-callout],
 blockquote.alert {
-    border: none;
-    border-left: 4px solid var(--color-note);
-    background-color: var(--color-bg-default);
+    border: 1px solid var(--borderColor-default);
+    border-left: 4px solid var(--borderColor-accent-emphasis);
+    background-color: var(--bgColor-muted);
     padding: 11px 16px;
     margin: 11px 0;
-    border-radius: 0;
+    border-radius: 6px;
 }
 
-/* Alert type colors */
+/* Alert type colors using Primer semantic tokens */
 blockquote[data-callout="note"],
 blockquote.alert-note {
-    border-left-color: var(--color-note);
+    border-left-color: var(--borderColor-accent-emphasis);
+    background-color: var(--bgColor-accent-muted);
 }
 
 blockquote[data-callout="tip"],
 blockquote.alert-tip {
-    border-left-color: var(--color-tip);
+    border-left-color: var(--borderColor-success-emphasis);
+    background-color: var(--bgColor-success-muted);
 }
 
 blockquote[data-callout="important"],
 blockquote.alert-important {
-    border-left-color: var(--color-important);
+    border-left-color: var(--borderColor-done-emphasis);
+    background-color: var(--bgColor-done-muted);
 }
 
 blockquote[data-callout="warning"],
 blockquote.alert-warning {
-    border-left-color: var(--color-warning);
+    border-left-color: var(--borderColor-attention-emphasis);
+    background-color: var(--bgColor-attention-emphasis);
 }
 
 blockquote[data-callout="caution"],
 blockquote.alert-caution {
-    border-left-color: var(--color-caution);
+    border-left-color: var(--borderColor-danger-emphasis);
+    background-color: var(--bgColor-danger-muted);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -324,19 +392,82 @@ summary {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   SYNTAX HIGHLIGHTING (Optional)
+   SYNTAX HIGHLIGHTING
+   Using GitHub Primer Design System color tokens
    ───────────────────────────────────────────────────────────────────────── */
 
-/* If using syntax highlighting, add these classes.
-   Adjust colors as needed for your syntax highlighter. */
+/* Rouge/Pygments syntax highlighting classes */
+.highlight .c,   /* Comment */
+.highlight .c1,  /* Comment.Single */
+.highlight .cm,  /* Comment.Multiline */
+.highlight .cp,  /* Comment.Preproc */
+.highlight .cs { /* Comment.Special */
+    color: var(--syntax-fgColor-comment);
+}
 
-.highlight .c { color: #7a828e; } /* Comment */
-.highlight .k { color: #ff7b72; } /* Keyword */
-.highlight .s { color: #a5d6ff; } /* String */
-.highlight .n { color: #f0f3f6; } /* Name */
-.highlight .o { color: #ff7b72; } /* Operator */
-.highlight .p { color: #f0f3f6; } /* Punctuation */
-.highlight .m { color: #79c0ff; } /* Number */
+.highlight .k,   /* Keyword */
+.highlight .kc,  /* Keyword.Constant */
+.highlight .kd,  /* Keyword.Declaration */
+.highlight .kn,  /* Keyword.Namespace */
+.highlight .kp,  /* Keyword.Pseudo */
+.highlight .kr,  /* Keyword.Reserved */
+.highlight .kt,  /* Keyword.Type */
+.highlight .o,   /* Operator */
+.highlight .ow { /* Operator.Word */
+    color: var(--syntax-fgColor-keyword);
+}
+
+.highlight .s,   /* String */
+.highlight .s1,  /* String.Single */
+.highlight .s2,  /* String.Double */
+.highlight .sa,  /* String.Affix */
+.highlight .sb,  /* String.Backtick */
+.highlight .sc,  /* String.Char */
+.highlight .sd,  /* String.Doc */
+.highlight .se,  /* String.Escape */
+.highlight .sh,  /* String.Heredoc */
+.highlight .si,  /* String.Interpol */
+.highlight .sr,  /* String.Regex */
+.highlight .ss,  /* String.Symbol */
+.highlight .sx { /* String.Other */
+    color: var(--syntax-fgColor-string);
+}
+
+.highlight .m,   /* Number */
+.highlight .mb,  /* Number.Bin */
+.highlight .mf,  /* Number.Float */
+.highlight .mh,  /* Number.Hex */
+.highlight .mi,  /* Number.Integer */
+.highlight .mo,  /* Number.Oct */
+.highlight .il { /* Number.Integer.Long */
+    color: var(--syntax-fgColor-constant);
+}
+
+.highlight .n,   /* Name */
+.highlight .na,  /* Name.Attribute */
+.highlight .nb,  /* Name.Builtin */
+.highlight .nc,  /* Name.Class */
+.highlight .nd,  /* Name.Decorator */
+.highlight .ne,  /* Name.Exception */
+.highlight .nf,  /* Name.Function */
+.highlight .ni,  /* Name.Entity */
+.highlight .nl,  /* Name.Label */
+.highlight .nn,  /* Name.Namespace */
+.highlight .no,  /* Name.Constant */
+.highlight .nt,  /* Name.Tag */
+.highlight .nv,  /* Name.Variable */
+.highlight .nx,  /* Name.Other */
+.highlight .py,  /* Name.Property */
+.highlight .vc,  /* Name.Variable.Class */
+.highlight .vg,  /* Name.Variable.Global */
+.highlight .vi,  /* Name.Variable.Instance */
+.highlight .bp { /* Name.Builtin.Pseudo */
+    color: var(--syntax-fgColor-variable);
+}
+
+.highlight .p { /* Punctuation */
+    color: var(--fgColor-default);
+}
 
 /* ─────────────────────────────────────────────────────────────────────────
    RESPONSIVE DESIGN
