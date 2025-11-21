@@ -37,6 +37,7 @@ exclude:
   - LICENSE.md
   - CODE_OF_CONDUCT.md
   - CONTRIBUTING.md
+  - homepage.md
 
 # Include files
 include:
