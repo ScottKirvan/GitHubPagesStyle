@@ -35,8 +35,6 @@
 <h4>
     <a href="https://tinyurl.com/3vf7whyd">View Demo</a>
   <span> · </span>
-    <a href="https://www.scottkirvan.com/GitHubPagesStyle/compare">Comparison Tool</a>
-  <span> · </span>
     <a href="https://github.com/ScottKirvan/GitHubPagesStyle/blob/main/README.md">Documentation</a>
   <span> · </span>
     <a href="https://github.com/ScottKirvan/GitHubPagesStyle/issues/new?template=bug_report.md">Report Bug</a>
@@ -46,6 +44,8 @@
 </div>
 
 **GitHubPagesStyle** is voluptatibus magni nemo est. Nulla nobis dicta iste minus dolor repellendus aspernatur atque. Earum expedita aut inventore tempora fugiat deleniti. Molestias minima nam expedita beatae totam ipsa reprehenderit animi. Occaecati quibusdam beatae ducimus voluptate ut doloribus vitae amet. Quia ut ut voluptate dignissimos adipisci dolorum rem.
+
+[Stylesheet Comparison Tool](https://www.scottkirvan.com/GitHubPagesStyle/compare) - Visual side-by-side comparison of local vs GitHub rendering
 
 ## Getting Started with This Template
 
