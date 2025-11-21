@@ -1,16 +1,11 @@
----
-layout: default
-title: GitHubPagesStyle
----
-
 # GitHubPagesStyle [![starline](https://starlines.qoo.monster/assets/ScottKirvan/GitHubPagesStyle)](https://github.com/qoomon/starline)
 <div align="center">
 
   <img src="assets/media/logo.jpg" alt="logo" width="200" height="auto" />
     <h1><a href="https://github.com/ScottKirvan/GitHubPagesStyle">ScottKirvan/GitHubPagesStyle</a></h1>
   <h3>Nulla nobis dicta iste minus dolor repellendus aspernatur atque</h3>
-  
-  
+
+
 <!-- Badges -->
 <p>
   <a href="https://github.com/ScottKirvan/GitHubPagesStyle/graphs/contributors">
@@ -36,7 +31,7 @@ title: GitHubPagesStyle
     <img src="https://img.shields.io/discord/1052011377415438346?style=flat-square&label=discord&color=00ACD7">
   </a>
 </p>
-   
+
 <h4>
     <a href="https://tinyurl.com/3vf7whyd">View Demo</a>
   <span> · </span>
@@ -49,9 +44,6 @@ title: GitHubPagesStyle
 </div>
 
 **GitHubPagesStyle** is voluptatibus magni nemo est. Nulla nobis dicta iste minus dolor repellendus aspernatur atque. Earum expedita aut inventore tempora fugiat deleniti. Molestias minima nam expedita beatae totam ipsa reprehenderit animi. Occaecati quibusdam beatae ducimus voluptate ut doloribus vitae amet. Quia ut ut voluptate dignissimos adipisci dolorum rem.
-
-[github_css_test](notes/github_css_test.md)  
-[GitHub-pages-style](notes/GitHub-pages-style.md)  
 
 ## Getting Started with This Template
 
@@ -108,7 +100,7 @@ GitHubPagesStyle
 >[!NOTE]
 > When using this template project, do not clone the tags or branches. Stick with `main` as the name of your main release branch. Change the version number in the `.release-please-manifest.json` file to the version you want to start with.
 >
-> Release-Please uses [Semantic Versioning](https://semver.org/) (version: MAJOR.MINOR.PATCH) and [Conventional Commits](https://www.conventionalcommits.org/). Changes to version numbers are triggered by specific keywords in your commit messages:
+> Release-Please uses [Semantic Versioning](https://semver.org/) (version: MAJOR.MINOR.PATCH). Changes to version numbers are triggered by specific keywords in your commit messages:
 > - `feat:` (new feature) will bump the MINOR version number.
 > - `fix:` (bug fixes) will bump the PATCH number.
 > - `feat!:` `fix!:` or any `xxx!:` (major and breaking changes) will bump the MAJOR version number.
@@ -146,6 +138,6 @@ Credits
 **[ScooterGitTemplate](https://github.com/ScottKirvan/ScooterGitTemplate) Copyright (c) (2025):** [Scott Kirvan](https://github.com/ScottKirvan)  - All rights reserved
 *ScooterGitTemplate is licensed under the [MIT License](LICENSE.md).*
 
-Project Link:  [GitHubPagesStyle](https://github.com/ScottKirvan/GitHubPagesStyle)  
-[CHANGELOG](notes/CHANGELOG.md)  
+Project Link:  [GitHubPagesStyle](https://github.com/ScottKirvan/GitHubPagesStyle)
+[CHANGELOG](notes/CHANGELOG.md)
 [TODO](notes/TODO.md)
