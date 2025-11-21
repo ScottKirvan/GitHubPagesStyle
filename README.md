@@ -35,6 +35,8 @@
 <h4>
     <a href="https://tinyurl.com/3vf7whyd">View Demo</a>
   <span> · </span>
+    <a href="https://www.scottkirvan.com/GitHubPagesStyle/compare">Comparison Tool</a>
+  <span> · </span>
     <a href="https://github.com/ScottKirvan/GitHubPagesStyle/blob/main/README.md">Documentation</a>
   <span> · </span>
     <a href="https://github.com/ScottKirvan/GitHubPagesStyle/issues/new?template=bug_report.md">Report Bug</a>
