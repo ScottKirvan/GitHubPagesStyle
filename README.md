@@ -45,7 +45,12 @@
 
 **GitHubPagesStyle** is voluptatibus magni nemo est. Nulla nobis dicta iste minus dolor repellendus aspernatur atque. Earum expedita aut inventore tempora fugiat deleniti. Molestias minima nam expedita beatae totam ipsa reprehenderit animi. Occaecati quibusdam beatae ducimus voluptate ut doloribus vitae amet. Quia ut ut voluptate dignissimos adipisci dolorum rem.
 
-[Stylesheet Comparison Tool](https://www.scottkirvan.com/GitHubPagesStyle/compare) - Visual side-by-side comparison of local vs GitHub rendering
+[Stylesheet Comparison Tool](https://www.scottkirvan.com/GitHubPagesStyle/compare) - Visual side-by-side comparison of local vs GitHub rendering  
+[TODO](notes/TODO.md)  
+[Code of Conduct](notes/CODE_OF_CONDUCT.md)  
+[CONTRIBUTING](CONTRIBUTING.md)  
+[github_css_test](notes/github_css_test.html) - Test file for GitHub CSS rendering  
+[GitHub-Pages-Style](notes/GitHub-Pages-Style.md) - Overview of GitHub Pages styling  
 
 ## Getting Started with This Template
 
