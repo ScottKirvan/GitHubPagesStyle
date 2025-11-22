@@ -208,6 +208,7 @@
 
             <label for="test-page-select">Test Page:</label>
             <select id="test-page-select">
+                <option value="github_css_test">GitHub CSS Test</option>
                 <option value="readme">README</option>
                 <option value="sample">Sample Content</option>
                 <option value="index">Homepage</option>
@@ -222,7 +223,7 @@
     <div id="custom-url-panel">
         <div>
             <label for="custom-url" style="color: var(--fgColor-muted, #b7bdc8);">Custom URL:</label>
-            <input type="text" id="custom-url" placeholder="https://example.com/page.html" style="flex: 1;">
+            <input type="text" id="custom-url" value="https://www.scottkirvan.com/GitHubPagesStyle/notes/github_css_test.html" style="flex: 1;">
             <button id="load-custom" class="primary">Load</button>
             <button id="close-custom">Close</button>
         </div>
@@ -281,6 +282,10 @@
 
         // Test page definitions
         const testPages = {
+            'github_css_test': {
+                local: siteUrl + '/notes/github_css_test',
+                github: 'https://github.com/ScottKirvan/GitHubPagesStyle/blob/main/notes/github_css_test.md'
+            },
             'readme': {
                 local: siteUrl + '/readme',
                 github: 'https://github.com/ScottKirvan/GitHubPagesStyle/blob/main/README.md'
@@ -350,7 +355,7 @@
         });
 
         // Initialize with default page
-        loadComparison('readme');
+        loadComparison('github_css_test');
 
         // Handle iframe load errors
         localIframe.addEventListener('error', (e) => {
