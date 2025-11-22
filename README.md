@@ -51,7 +51,7 @@
 [CONTRIBUTING](CONTRIBUTING.md)  
 [github_css_test](notes/github_css_test.html) - Test file for GitHub CSS rendering  
 [GitHub-Pages-Style](notes/GitHub-pages-style.md) - Overview of GitHub Pages styling  
-[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) - Community guidelines  
+[CODE_OF_CONDUCT.md](notes/CODE_OF_CONDUCT.md) - Community guidelines  
 
 ## Getting Started with This Template
 
