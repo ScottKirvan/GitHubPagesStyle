@@ -1,6 +1,3 @@
-# Local notes and documentation (not for repo)
-notes/
-
 # OS generated files
 .DS_Store
 Thumbs.db
@@ -9,15 +6,10 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
 # Obsidian vault settings
 .obsidian/
 
 .claude/settings.local.json
 nul
 intent.md
+notes/dev/
